@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>HYMovies|Request a Movie</title>
+		<link rel="stylesheet" type="text/css" href="CSS/Req.css">
+	</head>
+
+	<body>
+		<center>
+			<div class="request">
+					<h2 style="color:white;font-family:Arial, Helvetica, sans-serif">Tell us which movie you want to see from HYMovies!!</h2>
+					<p id="detail">Is there a Movie you'd like to see on HYMovies? Are you want to see your movie and which is not on <b>HYMovies</b>.<br><br>
+					Just give us detail about movie you want to see and enjoy watching!!.<br><br>
+					If still you are having trouble watching HYMovies please close this form and reach out to us via <b style="color:#6699FF">Contact Us</b> Form.</p>
+					<br>
+					<h3 style="color:white;text-align:left;padding-left:20px;font-family:Calibri">What you like to watch?</h3>
+
+	<!------------------------FORM Start ------------------------->
+	
+				<form name="form" onsubmit="return validate()" action="php/reqmvinsert.php" method="post">		
+					<input type="text" name="mvname" placeholder="Write movie name"><br>
+					<input type="text" name="category" placeholder="Category(Genre)"><br>
+					<select name="Language" id="lang">
+						<option id="lang" value="-">Select Language</option>
+						<option id="lang" value="hindi">Hindi</option>
+						<option id="lang" value="eng">English</option>
+					</select>	<br>
+					<input type="submit" name="submit" id="submit" value="SUBMIT">
+				</form>
+	<!------------------------FORM END -------------------------->	
+			</div>
+		</center>
+		
+		<script>
+			function validate()
+			{
+				var mvnm=document.form.mvname;
+				var catg=document.form.category;
+				var langg=document.form.Language;
+				if(validatemvn(mvnm))
+				{	if(validatecatg(catg))
+					{	if(validatelang(langg))
+						{ 	alert('Submit Succesfully!...');
+							window.location.reload()
+							return true;
+						}}}
+				return false;
+			}
+			function validatemvn(mvnm)
+			{
+				var chars=/^[A-Za-z0-9\s]+$/;
+				if(mvnm.value.match(chars))
+				{ 	return true;	}
+				else
+				{
+					alert('Please Enter Movie Name Correctly');
+					mvnm.focus();
+					return false;
+				}
+
+			}
+			function validatecatg(catg)
+			{
+				var chars=/^[A-Za-z0-9]+$/;
+				if(catg.value.match(chars))
+				{ 	return true;	}
+				else
+				{
+					alert('Please Write Movie Category(Genre) Correctly');
+					catg.focus();
+					return false;
+				}
+
+			}
+			function validatelang(langg)
+			{
+				if(langg.value=="-")
+				{
+					alert('Please Select Language');
+					langg.focus();
+					return false;
+				}
+				else
+				{
+					return true;
+				}
+			}
+		</script>
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+

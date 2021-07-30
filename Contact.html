@@ -1,0 +1,188 @@
+﻿<html>
+	<head>
+		<title>HYMovies | Contact Us</title>
+		<link rel="stylesheet" href="CSS/contact.css">
+	</head>
+	<body>
+		<table class="details">
+			<tr>
+				<td class="td12">
+					<div class="cell" id="txt">
+						<img id="logo" src="images/logo.png">
+						<pre id="pre1"><h1>WE ARE HERE TO 
+HEAR YOU!...</h1><h6>Please fill out this below form and we will be in touch very soon...</h6></pre>				
+					</div>
+				</td>
+				
+				<td class="td12">
+					<div class="cell" id="menu">
+						<a class="link" href="movie1.html" style="color:navy;"><span>HOME</span></a>
+						<a class="link" href="about.html" style="color: navy;"><span>ABOUT US</span></a>
+	<!-------------------------------- SIGN-IN Form Start -------------------------------------->
+						<button class="open-button" onclick="openForm()">SIGN-IN</button>
+
+						<div class="form-popup" id="Form">
+						  <form name="signin" onsubmit="validatesignin()" class="form-container" action="../Final pj/php/login.php" method="post">
+						    <h1 style="margin-top:0px">Login</h1>
+						
+						    <label for="email"><b>Email</b></label>
+						    <input type="email" name="email1" placeholder="Enter Email" title="for example : abc123@gmail.com" required><br>
+						
+						    <label for="psw"><b>Password</b></label>
+						    <input type="password" name="psw" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,28}" title="must contain
+							at least one number, one uppercase and lowercase letter and at least 8 or more characters" required>
+						
+						    <input type="submit" class="btn" name="submit" id="login" value="Login"> 
+						    <button type="button" class="btn cancel" onclick="closeForm()">&times;</button>
+						  	<a href="newpassword.html" class="newpass" style="color:blue;text-decoration:none">Change Password?</a><br>don't have account?<a href="subscribe.html" style="color:blue;text-decoration:none">&nbsp;Create new!</a>
+						  	<br><a href="deleteacct.html" class="delact" style="color:blue;text-decoration:none;">Delete Account</a>
+						  </form>
+						</div>
+
+						<script type="text/javascript">
+							function openForm() {
+							  document.getElementById("Form").style.display = "block";
+							}
+							
+							function closeForm() {
+							  document.getElementById("Form").style.display = "none";
+							}
+							
+							function validatesignin()
+							{
+								var eml=document.signin.email;
+								var pswd=document.signin.psw;
+								if(valiemail(eml))
+								{
+									if(valipsw(psw,8,26))
+									{
+										alert('LOGIN SUCCESSFULLY!...');
+
+									}
+								}
+								return false;
+							}
+							
+							function valiemail(eml)
+							{
+								var mail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,5})+$/
+								if(eml.value.match(mail))
+								{	return true;	}
+								else
+								{
+									alert('Please Enter Valid Email Address!!');
+									eml.focus();
+									return false;
+								}
+							}
+							
+							function valpsw(pswd,min,max)
+							{
+								var len=pswd.value.length;
+								if(len==0 || len>max || len<min)
+								{
+									if(len==0)
+									{	
+										alert('Password Should not be empty'); 
+									}
+									else
+									{
+										alert('Length between "+min+" to "+max+"');
+									}
+										pswd.focus();
+										return false;
+								}
+								else
+								{
+									alert('Login Succesfully!...');
+									window.location.reload()
+									return true;
+								}
+							}
+						</script>	
+	<!-------------------------------- SIGN-IN Form End -------------------------------------->
+					</div>
+				</td>
+			</tr>
+		</table>
+		
+		<table>
+			<tr>
+				<td class="td34"> 
+					<div class="contact">
+						<form name="contactusform" action="php/contactusinsert.php" method="post">
+							<h1 align="center">Contact Us</h1>
+							<div id="name">
+								<label for="fname">FULL NAME</label><br>
+								<input type="text" id="fname" name="fname" placeholder="Enter Your Name" onclick="valfnm()" required>
+							</div>
+							
+							<table class="emph">
+								<tr>
+									<td>
+										<div id="email1" class="cell">
+											<label for="email">EMAIL</label><br>
+											<input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+										</div>
+									</td>
+									
+									<td>	
+										<div id="phone" class="cell">
+											<label for="phno">PHONE</label>&nbsp;<small style="color:#A9A9A9">(optional)</small><br>
+											<input type="text" id="phn" name="phn" placeholder="Enter Your Phone No.">
+										</div>
+									</td>
+								</tr>
+							</table>
+							
+							<div id="category">
+								<label for="category" name="category">SELECT CATEGORY</label><br>
+									<select id="query" name="query" required>
+										<option id="query" value="-">Select Problem</option>
+										<option id="query" value="technical">Technical Issue</option>
+										<option id="query" value="general">Genreral Query</option>
+									</select>
+							</div>
+							
+							<div id="msg">
+								<label for="msg" name="msg">MESSAGE</label><br>
+								<textarea placeholder="Please Write Your Problem In Brief..." name="msg" required></textarea>
+							</div>
+							
+							<input type="submit" id="submit" value="SUBMIT">
+						</form>
+					</div>	
+				</td>
+				
+				<td class="td34">
+					<table>
+						<tr>
+							<td class="imgtd"><img class="imgs" src="../Final pj/logos/WA.png"  style="width:50px;height:50px"></td>
+							<td class="contactdetail"><a class="anchcontact" href="https://api.whatsapp.com/send?phone=9714348433">Himanshu Suthar (+91 97143 48433)</a></td>
+							<td class="contactdetail"><a class="anchcontact" href="https://api.whatsapp.com/send?phone=8000464745">Yash Pancholi (+91 80004 64745)</a></td>
+						</tr>
+						
+						<tr>
+							<td class="imgtd"><img class="imgs" src="../Final pj/logos/Linkedin.png"></td>
+							<td class="contactdetail"><a class="anchcontact" href="">@Yash Pancholi</a></td>
+							<td class="contactdetail"><a class="anchcontact" href="https://www.linkedin.com/in/himanshu-gajjar-b078a6199">@Himanshu Suthar</a></td>
+						</tr>
+
+						<tr>
+							<td class="imgtd"><img class="imgs" src="../Final pj/logos/IG.png"></td>
+							<td class="contactdetail"><a class="anchcontact" href="https://www.instagram.com/himanshu_9714/">@himanshu_9714</a></td>
+							<td class="contactdetail"><a class="anchcontact" href="https://www.instagram.com/yash.1901_/">@yash.1901_</a></td>
+						</tr>
+						
+						<tr>
+							<td class="imgtd"><img class="imgs" src="../Final pj/logos/Gmail.png"></td>
+							<td class="contactdetail"><a class="anchcontact" href="mailto:yashpancholi001@gmail.com">yashpancholi001@gmail.com</td>
+							<td class="contactdetail"><a class="anchcontact" href="mailto:himanshusuthar784@gmail.com">himanshusuthar784@gmail.com</td>
+						</tr>
+
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

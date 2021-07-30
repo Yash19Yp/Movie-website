@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HYMovies</title>
+	<link rel="stylesheet" type="text/css" href="   CSS/moviepage.css">
+</head>
+<body >
+	<body bgcolor="grey">
+	
+<!---------------------------- Navigation Hamburger Menu Start---------------------------->
+
+	<div id="hamburger" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="   Contact.html"><h3>CONTACT US</h3></a><br>
+		<a href="   subscribe.html"><h3>SUBSCRIBE</h3></a><br>
+		<a href="   About.html"><h3>ABOUT US</h3></a><br>
+		<a href="   Req.html"><h3>REQUEST MOVIE</h3></a><br>
+	</div>
+	<span style="font-size:25px;cursor:pointer;"onclick="openNav()" id="span1">&#9776;</span>
+				<script>
+					function openNav() {
+						document.getElementById("hamburger").style.display = "block";
+					}
+					function closeNav() {
+						document.getElementById("hamburger").style.display = "none";
+					}
+				</script>
+<!---------------------------- Navigation Hamburger Menu End---------------------------->
+
+<!-------------------------------- Search Bar Menu Start------------------------------>
+	<table align="center" border="0" cellpadding="10" id="T1">
+	<form action="php/search.php" method="post" id="searchform">
+	<tr>
+		<td align="center" width="40%"><img src="images/logo.png" alt="logo" id="logomv"></td>
+		<td ><input type="text" name="q" id="searchbox" placeholder="Find Whatever You Want!!" style="width: 350px;height:22px;"></td>
+		<td width="50%" align="left"><button type="submit" name="submit" id="submit">Search</button>       
+		<!--<img src="../logos/search.png" alt="search" name="search" id="srch" style="height:29px;margin-left:-20px;margin-top:3px;cursor:pointer"></td>-->
+	</tr></form>
+</table>
+<!-------------------------------- Search Bar Menu End--------------------------------->
+	
+	<table align="center" border="0" cellpadding="10" id="T2">
+		<tr>
+			<th><a href="   movie1.html" id="under">HOME</a></th>
+			<th>
+				<div class="dropdown">
+					<span id="under">GENRE</span>
+					<div class="dropdown-content">
+						<a class="genre" href="    action.html"><p class="p1">ACTION</p></a>
+						<a class="genre" href="    comedy.html"><p class="p1">COMEDY</p>
+						<a class="genre" href="    crime.html"><p class="p1">CRIME</p>
+						<a class="genre" href="    horror.html"><p class="p1">HORROR</p>
+						<a class="genre" href="    romance.html"><p class="p1">ROMANCE</p>
+						<a class="genre" href="    animat.html"><p class="p1">ANIMATION</p>
+						<a class="genre" href="    scifi.html"><p class="p1">SCI-FI</p>
+					</div>
+				</div>
+			</th>
+			<th>
+			<div class="dropdown">
+				<span id="under">YEAR</span>
+				<div class="dropdown-content">
+					<a class="yearwise" href="../Final pj/year/90to2000.html"><p class="p1">1990 to 2000</p></a>
+					<a class="yearwise" href="../Final pj/year/20-10.html"><p class="p1">2000 to 2010</p></a>
+					<a class="yearwise" href="../Final pj/year/10-20.html"><p class="p1">2010 to 2020</p></a>
+				</div>
+			</div>
+			</th>
+			<th>
+			<div class="dropdown">
+				<span id="under">QUALITY</span>
+				<div class="dropdown-content">
+					<a href="../Final pj/qlty/480p.html"><p class="p1">480P MOVIES</p></a>
+					<a href="../Final pj/qlty/720p.html"><p class="p1">720P MOVIES</p></a>
+					<a href="../Final pj/qlty/1080p.html"><P class="p1">1080P MOVIES</P></a>
+				</div>
+			</div>
+			</th>
+			</tr>
+	</table>    <br>
+	<br>
+	<!-- page content-->
+	<div class="wrapper">
+    <table align="center" border="0" width="65%" cellspacing="10">
+        <tr>
+            <td><img src="   images/horror/sixth sense.png" alt="movie" width="100%"></td>
+            <td><img src="   images/horror/constantine.jpg" alt="movie" width="100%"></td>
+            <td><img src="   images/horror/Insidious2010.jpg" alt="movie" width="100%"></td>
+            <td><img src="   images/horror/priest.jpg" alt="movie" width="100%"></td>
+           
+        </tr>
+        <tr style="background-color: white;">
+            <th width="20%" style="height: 80px;"><a href="   genrepage/horror/6thsense.html" id="mov">The Sixth Sense (1999) 480P Dual Audio(Hin-Eng) Download</a></th>
+            <th width="20%" style="height: 80px;"><a href="   genrepage/horror/constantine.html" id="mov">Constantine (2005) 480P Dual Audio(Hin-Eng) Download</a></th>
+            <th width="20%" style="height: 80px;"><a href="   genrepage/horror/insidious.html" id="mov">Insidious Chapter-One (2010) 480P Dual Audio(Hin-Eng) Download</a></th>
+            <th width="20%" style="height: 80px;"><a href="   genrepage/horror/priest.html" id="mov">Priest (2011) 480P Dual Audio(Hin-Eng) Download</a></th>
+            
+        </tr>
+    </table><br/><br/>
+    <table align="center" border="0" width="65%" cellspacing="10">
+        <tr>
+			<td><img src="   images/horror/conjuring.jpg" alt="movie" width="100%"></td>
+            <td><img src="   images/horror/evildead.jpg" alt="movie" width="100%"></td>
+            <td><img src="   images/horror/Annabelle_film_poster.jpg" alt="movie" width="100%"></td>
+            <td><img src="   images/horror/the mummy.jpg" alt="movie" width="100%"></td>
+        </tr>
+		<tr style="background-color: white;">
+			<th width="20%" style="height: 80px;"><a href="   genrepage/horror/conjuring.html" id="mov">The Conjuring (2013) 480P Dual Audio(Hin-Eng) Download</a></th>
+            <th width="20%" style="height: 80px;"><a href="   genrepage/horror/evildead.html" id="mov">Evil Dead (2013) 480P Dual Audio(Hin-Eng) Download</a></th>
+            <th width="20%" style="height: 80px;"><a href="   genrepage/horror/annabelle.html" id="mov">Annabelle (2014) 480P Dual Audio(Hin-Eng) Download</a></th>
+            <th width="20%" style="height: 80px;"><a href="   genrepage/horror/mummy.html" id="mov">The Mummy (2017) 480P Dual Audio(Hin-Eng) Download</a></th>
+        </tr>
+	</table>
+	<br/>
+	</div>
+	<!--Navi gation paging-->
+	<center>
+	<div class="pagging">
+		
+		<a href="   movie3.html">&laquo;</a>
+		<a href="   movie1.html" >1</a>
+		<a href="   movie2.html">2</a>
+        <a href="   movie3.html">3</a>
+        <a href="   movie4.html" class="active">4</a>
+        <a href="   movie5.html">5</a>
+        <a href="   movie6.html">6</a>
+		<a href="   movie7.html">7</a>
+		<a href="   movie5.html">&raquo;</a>
+		
+
+	</div>
+	</center><br/><br/>
+	<!--FOOTER-->
+    <div class="footer">
+		<div class="footer-bottom">
+			Copyright &copy; 2020 | Design by IT STUDENTS
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="CSS/deleteacct.css">
+	<title>Delete Account Permanentaly</title>
+</head>
+<body>
+	<center>
+	<div class="deleteacct">
+		<img src="images/logo.png">
+		<h6 style="font-size:13px;margin-top:4px;font-family:Calibri;color:#808080">Make sure this will delete your account permanentaly and you can't be able to login again.</h6>
+		<form name="deleteaccount" action="php/deleteacct.php" method="post">
+			<input type="email" name="email" id="email" placeholder="Enter Your Email" required="required" style="margin-top:0px;"><br><br>
+			<input type="password" name="pass" id="pass" class="password" placeholder="Enter Your Password!" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,28}" title="must contain
+							at least one number, one uppercase and lowercase letter and at least 8 or more characters" required="required"><br>
+			<br><br><input type="submit" class="btn" name="submit" id="submit" value="DELETE">&nbsp;&nbsp;
+			<input type="reset" class="btn" name="reset" value="RESET">
+		</form>
+	</div>
+	</center>
+</body>
+</html>

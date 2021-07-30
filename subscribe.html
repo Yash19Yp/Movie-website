@@ -1,0 +1,205 @@
+﻿<!DOCTYPE>
+<html>
+	<head>
+		<title>HYMovies|SUBSCRIBE</title>
+		<link rel="stylesheet" href="CSS/subscribe.css">
+	</head>
+	<body>
+	<center>	 
+	 <div id="maindiv">
+		<table id="table1" width="550px" height="600px" align="center">
+			<th>
+				<div style="width:550px;height:100px;background-color:black">
+					<h1 id="hh1">HYMovies.com</h1>
+					<p style="color:white;font-family:Calibri;padding-left:20px;padding-right:20px;">We provide best quality movies and pure contain.</p>
+				</div>
+			</th>
+			
+			<tr>
+				<td>
+					<div id="div2" style="width:550px;height:100px;background:linear-gradient(90deg,#9393FF 50%,#C58AFF 60%)">
+						<center><img src="logos/msg.png" alt="logo" id="submsg"></center>
+						<h4>Get exciting updates about new movies and you can watch ad free after subscribe to our website.</h4>
+					</div>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<div style="width:550px;height:400px;background-color:black">
+					
+	<!------------------------------ FORM Start ----------------------------->
+			
+						<form name="subscribe" onsubmit="return validation();" action="../Final pj/php/subscribeinsert.php" method="POST">
+							
+							<label for="fname">First Name &nbsp;&nbsp;&nbsp;&nbsp;:</label>						
+							&nbsp;<input type="text" id="fname" name="fname" size="35"><br>
+							
+							<label for="lname">Last Name &nbsp;&nbsp;&nbsp;&nbsp;:</label>
+							&nbsp;<input type="text" id="lname" name="lname" size="35"><br>
+
+							<label for="email">E-Mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</label>
+							&nbsp;<input type="email" id="email1" name="email" size="35" required><br>
+							
+							<label for="pwd">Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</label>
+							<input type="password" id="pwd" name="pwd" size="35" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,28}" title="must contain
+							at least one number and one uppercase and lowercase letter,and at least 8 or more characters" required><br>
+							
+							
+							<label for="gender">Gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</label>
+							<input type="radio" id="male" name="gender"><b style="color:yellow;font-family:Calibri">Male</b>							
+							<input type="radio" id="female" name="gender"><b style="color:yellow;font-family:Calibri">Female</b>
+							<input type="radio" id="other" name="gender"><b style="color:yellow;font-family:Calibri">Other</b><br>
+							
+							<label for="state">Select State &nbsp;:</label>
+								<select name="state" id="state">
+									<option id="state" value="-">Select State</option>
+									<option id="state" value="gujarat">Gujarat</option>
+									<option id="state" value="rajasthan">Rajasthan</option>
+									<option id="state" value="goa">Goa</option>
+									<option id="state" value="punjab">Punjab</option>
+									<option id="state" value="maharashtra">Maharashtra</option>
+									<option id="state" value="punjab">Madhya Pradesh</option>
+								</select><br>
+							<label for="pin">PIN Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+							<input type="text" id="pin" name="pin"><br>
+								<input type="submit" name="submit" id="submit" value="SUBSCRIBE TO HYMovies">
+						</form>
+		<!------------------------------ FORM End ----------------------------->
+
+					</div>			
+				</td>
+			</tr>
+		</table>
+	  </div>
+	</center>
+	
+		<script>
+			function validation()
+			{
+				var fnm = document.subscribe.fname;
+				var lnm = document.subscribe.lname;
+				var pswd = document.subscribe.pwd;
+				var eml = document.subscribe.email;
+				var ml = document.subscribe.male;
+				var fml = document.subscribe.female;
+				var othgen = document.subscribe.other;
+				var rajy = document.subscribe.state;
+				var pinc = document.subscribe.pin;
+				if(valfnm(fnm)){
+					if(vallnm(lnm)){
+						if(valpwd(pswd,8,28)){
+							if(valemail(eml)){
+								if(valgen(ml,fml,othgen)){
+									if(valstate(rajy)){
+										if(valpin(pinc)){
+											alert('SUBSCRIBE Succesfully!...');
+											window.location.reload()
+											return true;}
+											}}}}}}
+				return false;
+			}
+			function valfnm(fnm)
+			{
+				var chars=/^[A-Za-z]+$/;
+				if(fnm.value.match(chars))
+				{ 	return true;	}
+				else
+				{
+					alert('First Name must contains albhapet characters only');
+					fnm.focus();
+					return false;
+				}
+			}
+			function vallnm(lnm)
+			{
+				var chars=/^[A-Za-z]+$/;
+				if(lnm.value.match(chars))
+				{ 	return true;	}
+				else
+				{
+					alert('Last Name must contains albhapet characters only');
+					lnm.focus();
+					return false;
+				}
+			}
+			function valpwd(pswd,min,max)
+			{
+				var len=pswd.value.length;
+				if(len==0 || len>max || len<min)
+				{
+					if(len==0)
+					{	
+						alert('Password Should not be empty'); 
+					}
+					else
+					{
+						alert('Length between "+min+" to "+max+"');
+					}
+						pswd.focus();
+						return false;
+				}
+				return true;
+			}
+			function valemail(eml)
+			{
+				var mail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,5})+$/
+				if(eml.value.match(mail))
+				{	return true;	}
+				else
+				{
+					alert('Please Enter Valid Email Address!!');
+					eml.focus();
+					return false;
+				}
+			}
+			function valgen(ml,fml,othgen)
+			{
+				x=0;
+				if(ml.checked)
+				{	x++;	}
+				if(fml.checked)
+				{	x++;	}
+				if(othgen.checked)
+				{	x++;	}
+				if(x==0)
+				{
+					alert('Select Gender');
+					ml.focus();
+					return false;
+				}
+				else
+				{
+					return true;
+				}
+			}
+			function valstate(rajy)
+			{
+				if(rajy.value=="-")
+				{
+					alert('Please Select State');
+					rajy.focus();
+					return false;
+				}
+				else
+				{
+					return true;
+				}
+			}
+			function valpin(pinc)
+			{
+				var pc= /^[0-9]+$/;
+				if(pinc.value.match(pc))
+				{
+					return true;				
+				}
+				else
+				{
+					alert('PIN Code only contains numericals');
+					pinc.focus();
+					return false;	
+				}
+			}
+		</script>	  
+	</body>
+</html>
